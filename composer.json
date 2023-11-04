@@ -1,6 +1,6 @@
 {
     "name": "makhlenko/laravel-flash",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "license": "MIT",
     "authors": [
