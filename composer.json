@@ -1,0 +1,29 @@
+{
+    "name": "makhlenko/laravel-flash",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Makhlenko",
+            "homepage": "https://appto.team"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Makhlenko\\LaravelFlash\\": "src"
+        },
+        "files": [
+            "src/support/helper.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Makhlenko\\LaravelFlash\\LaravelFlashServiceProvider"
+            ]
+        }
+    }
+}
