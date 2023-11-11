@@ -15,8 +15,12 @@ Laravel Flash - имеет достаточно простую и гибкую �
 
 ## Установка
 
-```php
+```shell
 composer require makhlenko/laravel-flash
+```
+
+```shell
+php artisan vendor:publish --tag=laravel-flash --force
 ```
 
 ## Использование
