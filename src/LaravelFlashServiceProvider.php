@@ -10,10 +10,10 @@ class LaravelFlashServiceProvider extends \Illuminate\Support\ServiceProvider
 
         $this->publishes([
             __DIR__ .'/support/config.php' => config_path('flash.php')
-        ], 'laravel-flash-config');
+        ], 'flash-config');
 
         $this->publishes([
             __DIR__.'/resources/views/' => resource_path('views/vendor/flash')
-        ], 'laravel-flash-views');
+        ], 'flash-views');
     }
 }

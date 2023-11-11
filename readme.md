@@ -20,11 +20,11 @@ composer require makhlenko/laravel-flash
 ```
 
 ```shell
-php artisan vendor:publish --tag=laravel-flash-config --force
+php artisan vendor:publish --tag=flash-config --force
 ```
 
 ```shell
-php artisan vendor:publish --tag=laravel-flash-views --force
+php artisan vendor:publish --tag=flash-views --force
 ```
 
 ## Использование
