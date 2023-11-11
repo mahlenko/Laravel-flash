@@ -13,7 +13,7 @@ class LaravelFlashServiceProvider extends \Illuminate\Support\ServiceProvider
         ], 'laravel-flash-config');
 
         $this->publishes([
-            __DIR__.'/resources/views/' => resource_path('views/vendor/laravel-flash')
+            __DIR__.'/resources/views/' => resource_path('views/vendor/flash')
         ], 'laravel-flash-views');
     }
 }
