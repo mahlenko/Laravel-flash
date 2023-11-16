@@ -1,5 +1,6 @@
 <?php
 
+use Makhlenko\LaravelFlash\FlashType;
 use Makhlenko\LaravelFlash\LaravelFlash;
 
 /**
@@ -25,10 +26,11 @@ return [
          * Classes for the message block
          */
         'classes' => [
-            LaravelFlash::SUCCESS => 'bg-success-50 text-success-600',
-            LaravelFlash::ERROR => 'bg-danger-50 text-danger-600',
-            LaravelFlash::WARNING => 'bg-warning-50 text-warning-600',
-            LaravelFlash::INFO => 'bg-brand-50 text-brand-600',
+            FlashType::SUCCESS->name => 'bg-success-50 text-success-600',
+            FlashType::ERROR->name => 'bg-danger-50 text-danger-600',
+            FlashType::WARNING->name => 'bg-warning-50 text-warning-600',
+            FlashType::INFO->name => 'bg-brand-50 text-brand-600',
+            FlashType::MESSAGE->name => 'bg-gray-100 text-gray-600',
         ],
 
         /**

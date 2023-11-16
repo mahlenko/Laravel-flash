@@ -1,1 +1,2 @@
-@include(config('flash.messages.view'))
+@props(['namespace' => null, 'view' => config('flash.messages.view')])
+@include($template)

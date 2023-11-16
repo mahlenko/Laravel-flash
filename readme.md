@@ -74,9 +74,19 @@ flash(namespace: "your_namespace")->success('Your message is in a different name
 ### Как показать сообщения из namespace в шаблоне? Очень просто! 
 
 Укажите нужный namespace в компоненте:
+```php
+<x-flash::all namespace="your_namespace" />
+<x-flash::messages namespace="your_namespace" />
+<x-flash::validation />
+```
 
-- `<x-flash::all namespace="your_namespace" />`
-- `<x-flash::messages namespace="your_namespace" />`
+Укажите собственный шаблон прямо в макете:
+
+```php
+<x-flash::all namespace="your_namespace" view="{path_to_view}" view-validation="{path_to_view}" />
+<x-flash::messages namespace="your_namespace" view="{path_to_view}" />
+<x-flash::validation view="{path_to_view}" />
+```
 
 Это же круто, и очень просто! 🎉
 

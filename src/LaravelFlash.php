@@ -7,14 +7,6 @@ use Illuminate\Support\Collection;
 
 class LaravelFlash
 {
-    /**
-     * Available types
-     */
-    const SUCCESS = 'success';
-    const ERROR = 'error';
-    const WARNING = 'warning';
-    const INFO = 'info';
-
     private null|string|Collection $messages = null;
 
     public function __construct(
@@ -23,19 +15,23 @@ class LaravelFlash
     }
 
     public function success(string|array|Collection $message = null): void {
-        $this->push($message)->execute(self::SUCCESS);
+        $this->push($message)->execute(FlashType::SUCCESS);
     }
 
     public function error(string|array|Collection $message = null): void {
-        $this->push($message)->execute(self::ERROR);
+        $this->push($message)->execute(FlashType::ERROR);
     }
 
     public function warning(string|array|Collection $message = null): void {
-        $this->push($message)->execute(self::WARNING);
+        $this->push($message)->execute(FlashType::WARNING);
     }
 
     public function info(string|array|Collection $message = null): void {
-        $this->push($message)->execute(self::INFO);
+        $this->push($message)->execute(FlashType::INFO);
+    }
+
+    public function message(string|array|Collection $message = null): void {
+        $this->push($message)->execute(FlashType::MESSAGE);
     }
 
     public static function instance(string $namespace = null): static {
@@ -49,10 +45,11 @@ class LaravelFlash
      */
     public static function all(string $namespace = null): Collection {
         return collect([
-            self::SUCCESS => self::get(self::SUCCESS, $namespace),
-            self::ERROR => self::get(self::ERROR, $namespace),
-            self::WARNING => self::get(self::WARNING, $namespace),
-            self::INFO => self::get(self::INFO, $namespace),
+            FlashType::SUCCESS->name => self::get(FlashType::SUCCESS, $namespace),
+            FlashType::ERROR->name => self::get(FlashType::ERROR, $namespace),
+            FlashType::WARNING->name => self::get(FlashType::WARNING, $namespace),
+            FlashType::INFO->name => self::get(FlashType::INFO, $namespace),
+            FlashType::MESSAGE->name => self::get(FlashType::MESSAGE, $namespace)
         ])->filter();
     }
 
@@ -72,7 +69,7 @@ class LaravelFlash
      * @param string $type
      * @param string|null $namespace
      */
-    private static function get(string $type = self::SUCCESS, string $namespace = null): ?Collection {
+    private static function get(FlashType $type = FlashType::MESSAGE, string $namespace = null): ?Collection {
         try {
             $key = self::getSessionNamespace($type, $namespace);
             return session()->get($key);
@@ -102,7 +99,7 @@ class LaravelFlash
      * @param string $type
      * @return void
      */
-    private function execute(string $type): void {
+    private function execute(FlashType $type): void {
         session()->flash(
             self::getSessionNamespace($type, $this->namespace),
             $this->messages);
@@ -113,9 +110,9 @@ class LaravelFlash
      * @param string|null $namespace
      * @return string
      */
-    private static function getSessionNamespace(string $type, string $namespace = null): string {
+    private static function getSessionNamespace(FlashType $type, string $namespace = null): string {
         return $namespace
-            ? 'laravel-flash::'.$namespace.'::'.$type
-            : 'laravel-flash::'.$type;
+            ? 'laravel-flash::'.$namespace.'::'.$type->name
+            : 'laravel-flash::'.$type->name;
     }
 }

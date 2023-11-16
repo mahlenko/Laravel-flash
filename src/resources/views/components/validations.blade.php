@@ -1,1 +1,2 @@
-@include(config('flash.validations.view'))
+@props(['namespace' => null, 'view' => config('flash.validations.view')])
+@include($template)
