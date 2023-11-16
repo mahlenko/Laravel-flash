@@ -18,7 +18,7 @@ if (!function_exists('flash_messages')) {
 }
 
 
-if (function_exists('laravel_flash_session_name')) {
+if (!function_exists('laravel_flash_session_name')) {
     function laravel_flash_session_name(LaravelFlashType $type, string $namespace) {
         return sprintf(config('flash.session-name') .'::%s::%s', $namespace, $type);
     }
