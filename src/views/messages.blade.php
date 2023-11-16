@@ -10,7 +10,7 @@
             </p>
         @elseif(config('flash.show_title_defaults'))
             <p class="{{ config('flash.classes.title') }}">
-                {{ config('flash.titles_default')[$flash->$type] }}
+                {{ config('flash.titles_default')[$flash->type] }}
             </p>
         @endif
 
