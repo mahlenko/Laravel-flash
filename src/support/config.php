@@ -1,16 +1,12 @@
 <?php
 
 use Makhlenko\LaravelFlash\FlashType;
-use Makhlenko\LaravelFlash\LaravelFlash;
 
 /**
  * Just use LaravelFlash::get() in your template to get a collection of messages.
  * You can specify the type of messages: success, error, warning or info.
  */
 return [
-    /**
-     *
-     */
     'messages' => [
         /*
          * Path to messages view.
