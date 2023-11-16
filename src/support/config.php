@@ -58,6 +58,6 @@ return [
          * You can specify 1 of the message types, or write your own list of classes separated by a space.
          * Available types: LaravelFlash::SUCCESS, LaravelFlash::ERROR, LaravelFlash::WARNING, LaravelFlash::INFO
          */
-        'classes' => LaravelFlash::ERROR,
+        'classes' => FlashType::ERROR,
     ]
 ];
