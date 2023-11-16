@@ -65,7 +65,7 @@ class LaravelFlash
             return $validation_class;
         }
 
-        if ($validation_class instanceof FlashType && key_exists($validation_class->name, $validation_class)) {
+        if ($validation_class instanceof FlashType && key_exists($validation_class->name, $all_classes)) {
             return $all_classes[$validation_class->name];
         }
 
