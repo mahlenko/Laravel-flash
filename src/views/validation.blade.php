@@ -7,7 +7,7 @@
     @endif
     <ul class="{{ config('flash.classes.list') }}">
       @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
+        <li class="{{ config('flash.classes.item') }}">{{ $error }}</li>
       @endforeach
     </ul>
   </div>
