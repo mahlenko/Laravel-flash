@@ -4,6 +4,22 @@ use Makhlenko\LaravelFlash\enums\LaravelFlashType;
 
 return [
     /**
+     * Whether to show the default title if they are not specified in the message
+     */
+    'show_title_defaults' => true,
+
+    /**
+     * Default titles
+     */
+    'titles_default' => [
+        LaravelFlashType::SUCCESS->name => 'Completed successfully.',
+        LaravelFlashType::ERROR->name => 'Oops! An error has occurred.',
+        LaravelFlashType::WARNING->name => 'Important information.',
+        LaravelFlashType::INFO->name => 'Informational message.',
+        'VALIDATION' => 'Oops! Check the form fields.',
+    ],
+
+    /**
      * Used in the presentation template
      */
     'classes' => [
@@ -36,11 +52,11 @@ return [
          * By default, tailwindcss framework.
          */
         'individual' => [
-            LaravelFlashType::SUCCESS->name => 'bg-success-100 text-success-600',
-            LaravelFlashType::ERROR->name => 'bg-danger-50 text-danger-600',
-            LaravelFlashType::WARNING->name => 'bg-warning-100 text-warning-600',
-            LaravelFlashType::INFO->name => 'bg-sky-100 text-sky-600',
-            LaravelFlashType::DEFAULT->name => 'bg-gray-100 text-gray-600',
+            LaravelFlashType::SUCCESS->name => 'bg-success-100 text-success-700',
+            LaravelFlashType::ERROR->name => 'bg-danger-100 text-danger-700',
+            LaravelFlashType::WARNING->name => 'bg-warning-100 text-warning-700',
+            LaravelFlashType::INFO->name => 'bg-sky-100 text-sky-700',
+            LaravelFlashType::DEFAULT->name => 'bg-gray-100 text-gray-700',
         ],
 
         /**
