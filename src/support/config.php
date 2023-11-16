@@ -9,11 +9,6 @@ use Makhlenko\LaravelFlash\LaravelFlash;
  */
 return [
     /**
-     * The path to the template for viewing all messages
-     */
-    'view' => 'flash::all',
-
-    /**
      *
      */
     'messages' => [
