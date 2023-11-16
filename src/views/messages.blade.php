@@ -1,7 +1,7 @@
 @props(['namespace' => null, 'type' => \Makhlenko\LaravelFlash\enums\LaravelFlashType::DEFAULT])
 @php($flash = flash_messages($type, $namespace))
 
-@if ($flash->length)
+@if (!is_null($flash) && $flash->length)
     <div class="{{ config('flash.classes.base') }} {{ config('flash.classes.individual')[$flash->type] }}">
         {{-- title --}}
         @if($flash->title)
