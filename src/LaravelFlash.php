@@ -59,8 +59,13 @@ class LaravelFlash
      */
     public static function validationClass(): string {
         $classes = config('flash.messages.classes');
+        $key = config('flash.validations.classes');
+        if ($key instanceof FlashType) {
+            $key = $key->name;
+        }
+
         return key_exists(config('flash.validations.classes'), $classes)
-            ? $classes[config('flash.validations.classes')]
+            ? $classes[$key]
             : config('flash.validations.classes');
     }
 
