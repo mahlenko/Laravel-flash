@@ -2,18 +2,20 @@
 
 namespace Makhlenko\LaravelFlash;
 
+use Illuminate\Support\Facades\Blade;
+
 class LaravelFlashServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function register(): void {
         $this->mergeConfigFrom(__DIR__ . '/support/config.php', 'flash');
-        $this->loadViewsFrom(__DIR__ .'/resources/views', 'flash');
+        $this->loadViewsFrom(__DIR__ .'/views', 'flash');
 
         $this->publishes([
             __DIR__ .'/support/config.php' => config_path('flash.php')
-        ], 'flash-config');
+        ], 'flash');
 
         $this->publishes([
-            __DIR__.'/resources/views/' => resource_path('views/vendor/flash')
+            __DIR__.'/views/' => resource_path('views/vendor/flash')
         ], 'flash-views');
     }
 }

@@ -1,54 +1,67 @@
 <?php
 
-use Makhlenko\LaravelFlash\FlashType;
+use Makhlenko\LaravelFlash\enums\LaravelFlashType;
 
-/**
- * Just use LaravelFlash::get() in your template to get a collection of messages.
- * You can specify the type of messages: success, error, warning or info.
- */
 return [
-    'messages' => [
-        /*
-         * Path to messages view.
+    /**
+     * Used in the presentation template
+     */
+    'classes' => [
+        /**
+         * For any type of messages.
+         * In the default template, these classes will be combined with classes of a specific type.
          */
-        'view' => 'flash::messages',
+        'base' => 'rounded-md text-sm px-4 py-2',
 
         /**
-         * Classes for the message block
+         * Style classes for the title element
          */
-        'classes' => [
-            FlashType::SUCCESS->name => 'bg-success-50 text-success-600',
-            FlashType::ERROR->name => 'bg-danger-50 text-danger-600',
-            FlashType::WARNING->name => 'bg-warning-50 text-warning-600',
-            FlashType::INFO->name => 'bg-brand-50 text-brand-600',
-            FlashType::MESSAGE->name => 'bg-gray-100 text-gray-600',
+        'title' => 'font-bold',
+
+        /**
+         * Style classes for the message list
+         */
+        'list' => 'flex flex-col gap-y-1 list-disc',
+
+        /**
+         * Style classes for a list item
+         */
+        'item' => 'ml-2',
+
+        /**
+         * Additional classes for a specific type of message.
+         * Classes for "MODAL" type and "NOTIFY" type are excluded here.
+         * Since from most likely you will form a different template.
+         *
+         * By default, tailwindcss framework.
+         */
+        'individual' => [
+            LaravelFlashType::SUCCESS->name => 'bg-success-100 text-success-600',
+            LaravelFlashType::ERROR->name => 'bg-danger-50 text-danger-600',
+            LaravelFlashType::WARNING->name => 'bg-warning-100 text-warning-600',
+            LaravelFlashType::INFO->name => 'bg-sky-100 text-sky-600',
+            LaravelFlashType::DEFAULT->name => 'bg-gray-100 text-gray-600',
         ],
 
         /**
-         * Base classes of all message types
+         * Specify the name of the type used from the validation view.
          */
-        'base_classes' => 'px-4 py-2 text-sm rounded-md'
+        'validation' => LaravelFlashType::ERROR->name
     ],
 
     /**
-     * The package can use the included generic error list view when a validation occurs.
+     * Default messages view used
      */
-    'validations' => [
-        /**
-         * Determine if the package will use the included validations errors view.
-         */
-        'enabled' => true,
+    'views' => [
+        'messages' => 'flash::messages',
+        'validation' => 'flash::validation'
+    ],
 
-        /**
-         * Path to errors view. Only available if "validations.enabled" is true.
-         */
-        'view' => 'flash::validations',
-
-        /**
-         * Classes for the validation errors block.
-         * You can specify 1 of the message types, or write your own list of classes separated by a space.
-         * Available types: LaravelFlash::SUCCESS, LaravelFlash::ERROR, LaravelFlash::WARNING, LaravelFlash::INFO
-         */
-        'classes' => FlashType::ERROR,
-    ]
+    /**
+     * If your application already uses session named 'laravel-flash'
+     * in any way, you can replace it.
+     *
+     * Otherwise, don't change it.
+     */
+    'session_name' => 'laravel-flash',
 ];
