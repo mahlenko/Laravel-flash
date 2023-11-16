@@ -2,7 +2,6 @@
 
 namespace Makhlenko\LaravelFlash;
 
-use BadMethodCallException;
 use Illuminate\Support\Collection;
 use Makhlenko\LaravelFlash\entities\LaravelFlashGroup;
 
