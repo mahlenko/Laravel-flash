@@ -10,7 +10,7 @@ if (!function_exists('flash')) {
 }
 
 if (!function_exists('flash_messages')) {
-    function flash_messages(LaravelFlashType $type, string $namespace = null): object {
+    function flash_messages(LaravelFlashType $type, string $namespace = null): ?object {
         return session()->get(
             laravel_flash_session_name($type, $namespace ?? 'default')
         );
