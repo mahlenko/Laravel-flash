@@ -36,10 +36,6 @@ class LaravelFlash
     }
 
     public function __call(string $name, array $arguments): void {
-        if (!method_exists(LaravelFlashGroup::class, $name)) {
-            throw new BadMethodCallException("$name is not a valid method for " . self::class);
-        }
-
         @list($message, $title) = $arguments;
 
         if (is_string($message)) $message = [$message];
