@@ -9,13 +9,13 @@ use Makhlenko\LaravelFlash\entities\LaravelFlashGroup;
 /**
  * Laravel flash messages
  *
- * @method void success(string|array $message, ?string $title) A simple success message
- * @method void error(string|array $message, ?string $title) A simple error message
- * @method void warning(string|array $message, ?string $title) A simple warning message
- * @method void info(string|array $message, ?string $title) A simple info message
- * @method void default(string|array $message, ?string $title) A simple default message
- * @method void modal(string|array $message, ?string $title) A simple modal message
- * @method void notify(string|array $message, ?string $title) A simple notify message
+ * @method void success(string|array $message, ?string $title = null) A simple success message
+ * @method void error(string|array $message, ?string $title = null) A simple error message
+ * @method void warning(string|array $message, ?string $title = null) A simple warning message
+ * @method void info(string|array $message, ?string $title = null) A simple info message
+ * @method void default(string|array $message, ?string $title = null) A simple default message
+ * @method void modal(string|array $message, ?string $title = null) A simple modal message
+ * @method void notify(string|array $message, ?string $title = null) A simple notify message
  *
  * @version 1.0.1 In development
  * @author Sergey Makhlenko <info@appto.team>
