@@ -2,7 +2,7 @@
   <div class="{{ config('flash.classes.base') }} {{ config('flash.classes.individual')[config('flash.classes.validation')] }}">
     @if(config('flash.show_title_defaults'))
       <p class="{{ config('flash.classes.title') }}">
-        {{ config('flash.titles_default')[$flash->$type] }}
+        {{ config('flash.titles_default.VALIDATION') }}
       </p>
     @endif
     <ul class="{{ config('flash.classes.list') }}">
