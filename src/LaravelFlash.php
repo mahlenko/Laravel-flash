@@ -58,13 +58,14 @@ class LaravelFlash
      * @return string
      */
     public static function validationClass(): string {
-        $all_classes = config('flash.messages.classes');
+        // Validation classes
         $validation_class = config('flash.validations.classes');
-
         if (is_string($validation_class)) {
             return $validation_class;
         }
 
+        // Use default styles
+        $all_classes = config('flash.messages.classes');
         if ($validation_class instanceof FlashType && key_exists($validation_class->name, $all_classes)) {
             return $all_classes[$validation_class->name];
         }
