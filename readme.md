@@ -83,7 +83,7 @@ flash(namespace: "your_namespace")->success('Your message is in a different name
 Укажите собственный шаблон прямо в макете:
 
 ```php
-<x-flash::all namespace="your_namespace" view="{path_to_view}" view-validation="{path_to_view}" />
+<x-flash::all namespace="your_namespace" view="{path_to_view}" validation="{path_to_view}" />
 <x-flash::messages namespace="your_namespace" view="{path_to_view}" />
 <x-flash::validation view="{path_to_view}" />
 ```
