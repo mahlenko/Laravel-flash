@@ -9,7 +9,9 @@ return [
     'show_title_defaults' => true,
 
     /**
-     * Default titles
+     * Default titles.
+     *
+     * You can remove the ones you don't need.
      */
     'titles_default' => [
         LaravelFlashType::SUCCESS->name => 'Completed successfully.',
