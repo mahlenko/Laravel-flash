@@ -1,4 +1,4 @@
-@props(['namespace' => null, 'type' => null])
+@props(['namespace' => null, 'type' => \Makhlenko\LaravelFlash\enums\LaravelFlashType::DEFAULT])
 @php($flash = flash_messages($type, $namespace))
 
 @if ($flash->length)

@@ -5,6 +5,9 @@
 ])
 
 <div {{ $attributes }}>
-  <x-flash::messages :namespace="$namespace" :view="$view" />
+  @foreach(\Makhlenko\LaravelFlash\enums\LaravelFlashType::cases() as $case)
+    <x-flash::messages :namespace="$namespace" :type="$case" :view="$view" />
+  @endforeach
+
   <x-flash::validation :view="$validation" />
 </div>
