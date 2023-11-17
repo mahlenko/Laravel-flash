@@ -44,7 +44,7 @@ return [
         /**
          * Style classes for a list item
          */
-        'item' => 'ml-4',
+        'item' => '',
 
         /**
          * Additional classes for a specific type of message.
