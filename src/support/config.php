@@ -39,7 +39,7 @@ return [
         /**
          * Style classes for the message list
          */
-        'list' => 'flex flex-col gap-y-1 list-disc',
+        'list' => 'flex flex-col gap-y-1',
 
         /**
          * Style classes for a list item
