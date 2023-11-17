@@ -15,7 +15,7 @@
         @endif
 
         {{-- messages --}}
-        <ul class="{{ config('flash.classes.list') }} @if($flash->length === 1)list-none@endif">
+        <ul class="{{ config('flash.classes.list') }}@if($flash->length === 1) list-none @endif">
             @foreach($flash->messages as $message)
                 <li class="{{ config('flash.classes.item') }}">{{ $message }}</li>
             @endforeach
