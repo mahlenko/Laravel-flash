@@ -20,5 +20,14 @@
                 <li class="{{ config('flash.classes.item') }}">{{ $message }}</li>
             @endforeach
         </ul>
+
+        {{-- Links --}}
+        @if($flash->links)
+            <div class="flex gap-x-2 mt-1">
+                @foreach($flash->links as $link)
+                    <a href="{{ $link->href }}" class="hover:underline">{{ $link->text }}</a>
+                @endforeach
+            </div>
+        @endif
     </div>
 @endif
